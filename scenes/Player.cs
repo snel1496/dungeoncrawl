@@ -27,30 +27,17 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		var inputDir = Vector2.Zero;
+		var inputDir = Input.GetVector("left", "right", "up", "down");
+		_direction = inputDir switch
+		{
+			{X: -1} => Direction.West,
+			{X: 1}  => Direction.East,
+			{Y: -1}  => Direction.North,
+			{Y: 1}  => Direction.South,
+			_ => _direction
+		};
+
 		var isStrike = false;
-
-		if (Input.IsActionPressed("right")) // TODO make better with axis
-		{
-			inputDir.X = 1;
-			_direction = Direction.East;
-		}
-		else if (Input.IsActionPressed("left"))
-		{
-			inputDir.X = -1;
-			_direction = Direction.West;
-		}
-		if (Input.IsActionPressed("up"))
-		{
-			inputDir.Y = -1;
-			_direction = Direction.North;
-		}
-		else if (Input.IsActionPressed("down"))
-		{
-			inputDir.Y = 1;
-			_direction = Direction.South;
-		}
-
 		if (Input.IsActionPressed("grabItem"))
 		{
 			// find location of mouse and any rigid bodies under it
