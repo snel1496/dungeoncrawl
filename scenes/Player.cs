@@ -51,7 +51,7 @@ public partial class Player : CharacterBody2D
 			isStrike = true;
 		}
 		animateSprite(inputDir, isStrike);
-		Velocity = inputDir.Normalized() * speed * (float)delta;
+		Velocity = inputDir * speed * (float)delta;
 		MoveAndSlide();
 	}
 
