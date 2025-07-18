@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce55pogf368kv"]
+[gd_scene load_steps=5 format=3 uid="uid://ce55pogf368kv"]
 
+[ext_resource type="Script" uid="uid://b5us8dto5qp2a" path="res://scenes/ShipParts/SteelBeam.cs" id="1_b64xa"]
 [ext_resource type="Texture2D" uid="uid://bat2aucdny0j" path="res://assets/s4m_ur4i_16x16-factory-sprites.png" id="1_ll0gs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aja5t"]
@@ -10,10 +11,14 @@ region = Rect2(32, 64, 18, 4)
 size = Vector2(18, 4)
 
 [node name="Beam" type="RigidBody2D"]
+input_pickable = true
 gravity_scale = 0.0
+script = ExtResource("1_b64xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_aja5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o4q50")
+
+[connection signal="input_event" from="." to="." method="_on_InputEvent"]

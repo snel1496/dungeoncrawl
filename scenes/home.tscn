@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=4 uid="uid://dxccui2rgxpr1"]
 
-[ext_resource type="TileSet" uid="uid://3bjjwq5t0ndy" path="res://home.tres" id="1_1ey7h"]
-[ext_resource type="PackedScene" uid="uid://bcyhjaaxwdhlm" path="res://player.tscn" id="2_1ey7h"]
-[ext_resource type="Script" uid="uid://byuihjcarhvr" path="res://FPS_LABEL.cs" id="3_o1ld7"]
-[ext_resource type="PackedScene" uid="uid://ce55pogf368kv" path="res://SteelBeam.tscn" id="4_2ayvv"]
+[ext_resource type="TileSet" uid="uid://3bjjwq5t0ndy" path="res://materials/home.tres" id="1_1ey7h"]
+[ext_resource type="PackedScene" uid="uid://bcyhjaaxwdhlm" path="res://scenes/player.tscn" id="2_1ey7h"]
+[ext_resource type="Script" uid="uid://byuihjcarhvr" path="res://scenes/FPS_LABEL.cs" id="3_o1ld7"]
+[ext_resource type="PackedScene" uid="uid://ce55pogf368kv" path="res://scenes/ShipParts/SteelBeam.tscn" id="4_2ayvv"]
 
 [node name="Home" type="Node2D"]
 
@@ -18,6 +18,7 @@ tile_map_data = PackedByteArray("AAAJAAYAAAAHAAAAAAAJAAcAAAAGAAAAAAAKAAYAAAAIAAA
 tile_set = ExtResource("1_1ey7h")
 
 [node name="Player" parent="." instance=ExtResource("2_1ey7h")]
+unique_name_in_owner = true
 position = Vector2(171, 132)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
