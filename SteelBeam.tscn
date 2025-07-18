@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce55pogf368kv"]
+
+[ext_resource type="Texture2D" uid="uid://bat2aucdny0j" path="res://assets/s4m_ur4i_16x16-factory-sprites.png" id="1_ll0gs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aja5t"]
+atlas = ExtResource("1_ll0gs")
+region = Rect2(32, 64, 18, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4q50"]
+size = Vector2(18, 4)
+
+[node name="Beam" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_aja5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o4q50")
